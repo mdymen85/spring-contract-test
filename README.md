@@ -17,34 +17,34 @@ There are two applications: **the producer** is in charge of receiving a request
 
 ## Dependencies used
 
-'''
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-contract-stub-runner</artifactId>
-			<version>3.1.3</version>
-			<scope>test</scope>
-		</dependency>
-		
-    <dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-contract-verifier</artifactId>
-			<version>3.1.3</version>
-			<scope>test</scope>
-		</dependency>
-'''
+```
+<dependency>
+	<groupId>org.springframework.cloud</groupId>
+	<artifactId>spring-cloud-starter-contract-stub-runner</artifactId>
+	<version>3.1.3</version>
+	<scope>test</scope>
+</dependency>
+
+<dependency>
+	<groupId>org.springframework.cloud</groupId>
+	<artifactId>spring-cloud-starter-contract-verifier</artifactId>
+	<version>3.1.3</version>
+	<scope>test</scope>
+</dependency>
+```
 
 ## Generateing the mock files
 
 ```
-			<plugin>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-contract-maven-plugin</artifactId>
-				<version>3.1.3</version>
-				<extensions>true</extensions>
-				<configuration>
-					<baseClassForTests>
-						com.contract.drivenproducer.BaseTestClass
-					</baseClassForTests>
-				</configuration>
-			</plugin>
+<plugin>
+	<groupId>org.springframework.cloud</groupId>
+	<artifactId>spring-cloud-contract-maven-plugin</artifactId>
+	<version>3.1.3</version>
+	<extensions>true</extensions>
+	<configuration>
+		<baseClassForTests>
+			com.contract.drivenproducer.BaseTestClass
+		</baseClassForTests>
+	</configuration>
+</plugin>
 ```
