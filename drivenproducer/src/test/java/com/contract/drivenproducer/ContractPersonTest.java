@@ -12,15 +12,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest(classes = DrivenproducerApplication.class)
 public class ContractPersonTest extends BaseTestClass {
 
+    private static final String BASIC_RESPONSE_11 = "{\"id\":11,\"name\":\"Martin\"}";
+
     @Test
     public void personTest() {
 
-//        MockMvcRequestSpecification request = given();
-//
-//        ResponseOptions response = given().spec(request)
-//                .get("/api/v1/person");
-//
-//        assertThat(response.statusCode()).isEqualTo(200);
+        MockMvcRequestSpecification request = given();
+
+        var response = given().spec(request)
+                .get("/api/v1/person/11");
+
+        assertThat(response.statusCode()).isEqualTo(200);
+        assertThat(response.getBody().print()).isEqualTo(BASIC_RESPONSE_11);
 
     }
 

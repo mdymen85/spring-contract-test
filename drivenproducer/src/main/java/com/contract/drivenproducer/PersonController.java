@@ -14,24 +14,22 @@ public class PersonController {
 
 
 
-    @RequestMapping(path = "/v1/person" , method = RequestMethod.GET)
-    public void findById() {
-
-    }
-
-//    @RequestMapping(path = "/v1/person/{id}" , method = RequestMethod.GET)
-//    public ResponseEntity<Person> findById(@PathVariable Long id) {
-//
-//        var person = Person.builder()
-//                .id(id)
-//                .name("Martin")
-//                .build();
-//
-//
-//
-//        return new ResponseEntity<Person>(person, HttpStatus.OK);
+//    @RequestMapping(path = "/v1/person" , method = RequestMethod.GET)
+//    public void findById() {
 //
 //    }
+
+    @RequestMapping(path = "/v1/person/{id}" , method = RequestMethod.GET)
+    public ResponseEntity<Person> findById(@PathVariable Long id) {
+
+        var person = Person.builder()
+                .id(id)
+                .name("Martin")
+                .build();
+
+        return new ResponseEntity<Person>(person, HttpStatus.OK);
+
+    }
 
 }
 
